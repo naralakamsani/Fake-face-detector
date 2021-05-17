@@ -69,7 +69,7 @@ def predict(image_path, model, topk, gpu=False):
     
     model.to(device)
     
-    # TODO: Implement the code to predict the class from an image file
+    # Implement the code to predict the class from an image file
     image = process_image(image_path)
     image = image.unsqueeze_(0)
     image = image.to(device).float()

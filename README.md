@@ -40,10 +40,25 @@
     - Use GPU for inference: ```python predict.py input checkpoint --gpu```
   - Output: The probability a face is real or fake
   
-- Predict an image class using **openVino inference** with **openVino_predict.py** along with the probability. That is you'll pass in one or more images /path/to/image
-  - Basic usage: ```python predict.py /path/to/image checkpoint```
+- Predict an image class using openVino inference with **openVino_predict.py** along with the probability. That is you'll pass in one or more images /path/to/image
+  - Basic usage: ```python openVino_predict.py -m /path/to/model.onnx -i /path/to/image1 [/path/to/image2 ..] --labels /path/to/labels``
   - Options:
-    - Return most likely class: ```python predict.py input checkpoint```
-    - Use a mapping of categories to real names: ```python predict.py input checkpoint```
-    - Use GPU for inference: ```python predict.py input checkpoint --gpu```
-  - Output: The probability a face is real or fake
+     - -h, --help       Show this help message and exit.
+     - -m MODEL, --model MODEL
+                        Required. Path to an .xml or .onnx file with a trained model.
+     - -i INPUT [INPUT ...], --input INPUT [INPUT ...]
+                        Required. Path to a folder with images or path to an
+                        image files
+     - -l CPU_EXTENSION, --cpu_extension CPU_EXTENSION
+                        Optional. Required for CPU custom layers. MKLDNN (CPU)-targeted custom layers.
+                        Absolute path to a shared library with the kernels
+                        implementations.
+     - -d DEVICE, --device DEVICE
+                        Optional. Specify the target device to infer on; CPU,
+                        GPU, FPGA, HDDL or MYRIAD is acceptable. The sample
+                        will look for a suitable plugin for device specified.
+                        Default value is CPU
+     - -labels LABELS       Optional. Path to a labels mapping file
+     - -nt NUMBER_TOP, --number_top NUMBER_TOP
+                        Optional. Number of top results
+  - Output: The probability a face is real and fake

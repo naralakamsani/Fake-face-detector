@@ -35,7 +35,7 @@
 - Predict if an image with **predict.py** along with the probability of that name. That is you'll pass in a single image /path/to/image and return the probability a face is real or fake
   - Basic usage: ```python predict.py /path/to/image checkpoint```
   - Options:
-    - Return top K most likely classes: ```python predict.py input checkpoint ---top_k 2```
+    - Return most likely class: ```python predict.py input checkpoint```
     - Use a mapping of categories to real names: ```python predict.py input checkpoint```
     - Use GPU for inference: ```python predict.py input checkpoint --gpu```
 

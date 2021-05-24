@@ -30,7 +30,7 @@
     - Set direcotry to save checkpoints: ```python train.py data_dir --save_dir save_directory```
     - Set hyperparameters: ```python train.py data_dir --learning_rate 0.001 --epochs 2```
     - Use GPU for training: ```python train.py data_dir --gpu gpu```
-  - Output: A trained network ready with checkpoint saved for doing parsing of face images and identifying the "realness" of the face.
+  - Output: A trained network ready with checkpoint and a .onnx file of the model saved for doing parsing of face images and identifying the "realness" of the face.
     
 - Predict an image class with **predict.py** along with the probability. That is you'll pass in a single image /path/to/image
   - Basic usage: ```python predict.py /path/to/image checkpoint```

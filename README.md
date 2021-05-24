@@ -32,7 +32,7 @@
     - Use GPU for training: ```python train.py data_dir --gpu gpu```
   - Output: A trained network ready with checkpoint saved for doing parsing of face images and identifying the "realness" of the face.
     
-- Predict if an image with **predict.py** along with the probability of that name. That is you'll pass in a single image /path/to/image and return the probability a face is real or fake
+- Predict an image with **predict.py** along with the probability of the predicted class. That is you'll pass in a single image /path/to/image and get the probability a face is real or fake
   - Basic usage: ```python predict.py /path/to/image checkpoint```
   - Options:
     - Return most likely class: ```python predict.py input checkpoint```

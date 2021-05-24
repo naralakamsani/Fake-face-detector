@@ -40,4 +40,4 @@
     - Use GPU for inference: ```python predict.py input checkpoint --gpu```
   - Output: The probability a face is real or fake
   
-- Predict an image class with **openVino_predict.py** along with the probability. That is you'll pass in a single image /path/to/image
+- Predict an image class using openVino inference with **openVino_predict.py** along with the probability. That is you'll pass in one or more images /path/to/image

@@ -8,7 +8,7 @@
 
 ### Data
 - The data used specifically for this project is not organized into any one dataset online.
-- The dataset used contains some images from popular online datasets such as {The 1 million Fake Faces, UTKFace, LFW} and some random images from google.
+- The dataset used contains some images from popular online datasets such as {The 1 million Fake Faces, UTKFace, Flickr-Faces-HQ Dataset} and some random images from google.
 
 - The data was into comprised 3 folders: test, train, validate
 
@@ -40,4 +40,10 @@
     - Use GPU for inference: ```python predict.py input checkpoint --gpu```
   - Output: The probability a face is real or fake
   
-- Predict an image class using openVino inference with **openVino_predict.py** along with the probability. That is you'll pass in one or more images /path/to/image
+- Predict an image class using **openVino inference** with **openVino_predict.py** along with the probability. That is you'll pass in one or more images /path/to/image
+  - Basic usage: ```python predict.py /path/to/image checkpoint```
+  - Options:
+    - Return most likely class: ```python predict.py input checkpoint```
+    - Use a mapping of categories to real names: ```python predict.py input checkpoint```
+    - Use GPU for inference: ```python predict.py input checkpoint --gpu```
+  - Output: The probability a face is real or fake

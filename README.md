@@ -41,7 +41,7 @@
   - Output: The probability a face is real or fake
   
 - Predict an image class using openVino inference with **openVino_predict.py** along with the probability. That is you'll pass in one or more images /path/to/image
-  - Basic usage: ```python openVino_predict.py -m /path/to/model.onnx -i /path/to/image1 [/path/to/image2 ..] --labels /path/to/labels``
+  - Basic usage: ```python openVino_predict.py -m /path/to/model.onnx -i /path/to/image1 [/path/to/image2 ..] --labels /path/to/labels```
   - Options:
      - -h, --help       Show this help message and exit.
      - -m MODEL, --model MODEL

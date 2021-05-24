@@ -61,4 +61,4 @@
      - -labels LABELS       Optional. Path to a labels mapping file
      - -nt NUMBER_TOP, --number_top NUMBER_TOP
                         Optional. Number of top results
-  - Output: The probability a face is real and fake
+  - Output: The probability each of the face images is real and fake

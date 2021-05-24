@@ -2,19 +2,18 @@
 
 
 ### Project Overview
-- Load and preprocess the dataset of flowers images
-- Train the image classifier on your dataset of flowers
-- Use the trained classifier to predict image content
+- Load and preprocess the dataset of fake and real images
+- Train the image classifier on the dataset of fake and real images
+- Use the trained classifier to predict if an image of a face was created by AI, or a photo taken of a real person
 
 ### Data
-- The data used specifically for this assignment are a flower database(.json file). It is not provided in the repository as it's larger than what github allows.
-- The data can be downloaded [here](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/102flowers.tgz)
-- Extract the folder and name the folder containing all data "flowers" for the jupyter notebook to work properly
+- The data used specifically for this project is not organized into any one dataset online.
+- The dataset used contains some images from popular online datasets such as {The 1 million Fake Faces, UTKFace, LFW} and some random images from google.
 
-- The data need to comprised of 3 folders: test, train, validate
+- The data was into comprised 3 folders: test, train, validate
 
-- Inside the train, test and validate folders there should be folders bearing a specific number which corresponds to a specific category, clarified in the json file
-- For example, if we have the image x.jpg and it is a lotus it could be in a path like this /test/5/x.jpg and json file would be like this {...5:"lotus",...}
+- Inside the train, test and validate folders there should be folders bearing a specific number which corresponds to a specific category
+- For example, if we have the image x.jpg and it is a lotus it could be in a path like this /test/real/x.jpg
 
 ### Install(run on command line)
 - pip install pandas
@@ -29,15 +28,14 @@
   - Prints out current epoch, training loss, validation loss, and validation accuracy as the netowrk trains
   - Options:
     - Set direcotry to save checkpoints: ```python train.py data_dir --save_dir save_directory```
-    - Choose arcitecture (densenet121 or vgg16 available): ```python train.py data_dir --arch "vgg16"```
-    - Set hyperparameters: ```python train.py data_dir --learning_rate 0.001 --hidden_layer1 120 --epochs 20```
+    - Set hyperparameters: ```python train.py data_dir --learning_rate 0.001 --epochs 2```
     - Use GPU for training: ```python train.py data_dir --gpu gpu```
-  - Output: A trained network ready with checkpoint saved for doing parsing of flower images and identifying the species.
+  - Output: A trained network ready with checkpoint saved for doing parsing of face images and identifying the "realness" of the face.
     
-- Predict flower name from an image with **predict.py** along with the probability of that name. That is you'll pass in a single image /path/to/image and return the flower name and class probability
+- Predict if an image with **predict.py** along with the probability of that name. That is you'll pass in a single image /path/to/image and return the probability a face is real or fake
   - Basic usage: ```python predict.py /path/to/image checkpoint```
   - Options:
-    - Return top K most likely classes: ```python predict.py input checkpoint ---top_k 3```
-    - Use a mapping of categories to real names: ```python predict.py input checkpoint --category_names cat_To_name.json```
+    - Return top K most likely classes: ```python predict.py input checkpoint ---top_k 2```
+    - Use a mapping of categories to real names: ```python predict.py input checkpoint```
     - Use GPU for inference: ```python predict.py input checkpoint --gpu```
 

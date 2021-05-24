@@ -24,6 +24,6 @@ train_helper.save_model(model, class_to_idx, args.arch, save_loc=args.save_dir)
 
 #Convert to onnx
 model.to('cpu')
-image = predict_helper.process_image("img.jpg")
+image = predict_helper.process_image(os.listdir(args.data_dir+'/test/fake')[0])
 dummy_input = image.unsqueeze_(0).to('cpu').float()
 torch.onnx.export(model,dummy_input,"model.onnx")

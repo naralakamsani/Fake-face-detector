@@ -17,9 +17,11 @@
 
 ### Install(run on command line)
 - pip install pandas
-- pip install matplotlib
-- pip install Pillow
+- pip install numpy
+- - pip install matplotlib
+- pip install pillow
 - pip install requests
+- pip install openvino-python
 - In order to install Pytorch follow the instructions given on the [official site](https://pytorch.org/)
 
 ### Running the command line application

@@ -18,7 +18,7 @@
 ### Install(run on command line)
 - pip install pandas
 - pip install numpy
-- - pip install matplotlib
+- pip install matplotlib
 - pip install pillow
 - pip install requests
 - pip install openvino-python

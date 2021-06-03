@@ -2,7 +2,7 @@ import torch
 from PIL import Image
 import numpy as np
 from torchvision import models
-
+import pandas as pd
 
 def load_checkpoint(path):
     checkpoint = torch.load(path)
@@ -69,7 +69,7 @@ def predict(image_path, model, topk, gpu=False):
     
     model.to(device)
     
-    # Implement the code to predict the class from an image file
+    # TODO: Implement the code to predict the class from an image file
     image = process_image(image_path)
     image = image.unsqueeze_(0)
     image = image.to(device).float()
@@ -94,7 +94,14 @@ def predict(image_path, model, topk, gpu=False):
     
     return probs,class_names
 
-def image_predict(image_path, model, topk=1, gpu=False):
+def image_predict(image_path, model, topk=2, gpu=False):
+    #Get the predictions
     probs, class_names = predict(image_path, model, topk, gpu=gpu)
 
-    print("There is " + str(probs[0]*100) + "% probability that the person in the provided image is " + class_names[0])
+    #Create DF of prediction
+    top_preds = pd.DataFrame({'class': class_names, 'probability': probs})
+
+    # Print the top predictions
+    print(f"\nImage Path:\n\t{image_path}")
+    print(top_preds.to_string(index=False))
+    print('')

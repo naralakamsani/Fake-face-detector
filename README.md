@@ -35,9 +35,9 @@
   - Output: A trained network ready with checkpoint and a .onnx file of the model saved for doing parsing of face images and identifying the "realness" of the face.
     
 - Predict an image class with **predict.py** along with the probability. That is you'll pass in a single image /path/to/image
-  - Basic usage: ```python predict.py /path/to/image checkpoint```
+  - Basic usage: ```python predict.py /path/to/image [/path/to/image2 ..] checkpoint```
   - Options:
-    - Return most likely class: ```python predict.py input checkpoint```
+    - Return most likely class: ```python predict.py input [input ...] checkpoint```
     - Use a mapping of categories to real names: ```python predict.py input checkpoint```
     - Use GPU for inference: ```python predict.py input checkpoint --gpu```
   - Output: The probability a face is real or fake
